@@ -1,0 +1,20 @@
+.Sidebar {
+  width: 300px;
+  height: calc(100vh - 50px);
+  position: relative;
+  transition: width 0.5s;
+  background-color: var(--inverted-bg-color);
+}
+
+.collapsed {
+  width: 80px;
+}
+
+.switchers {
+  position: absolute;
+  bottom: 60px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex-direction: column;
+}

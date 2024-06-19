@@ -3,7 +3,8 @@ export type buildMode = 'production' | 'development';
 export interface buildPaths {
   entry: string,
   html: string,
-  build: string
+  build: string,
+  src: string
 }
 
 export interface buildEnv {
