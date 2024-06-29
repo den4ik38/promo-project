@@ -2,7 +2,7 @@ import { FC, useMemo, useState } from "react";
 import { LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext } from "./ThemeContext";
 
 interface themeProviderProps {
-    initialTheme: Theme
+    initialTheme?: Theme
 }
 
 export const ThemeProvider: FC<themeProviderProps> = ({children, initialTheme}) => {
