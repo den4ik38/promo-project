@@ -4,7 +4,7 @@ module.exports = {
         es2021: true,
         jest: true,
     },
-    extends: ['plugin:react/recommended', 'plugin:i18next/recommended'],
+    extends: ['plugin:react/recommended', 'plugin:i18next/recommended', 'plugin:react-hooks/recommended'],
     parser: '@typescript-eslint/parser',
     parserOptions: {
         ecmaFeatures: {
@@ -22,6 +22,8 @@ module.exports = {
         'react/jsx-indent': [2, 4],
         'react/jsx-indent-props': [2, 4],
         'indent': [2, 4],
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "error",
         'react/jsx-filename-extension': [
             2,
             { extensions: ['.js', '.jsx', '.tsx'] },
