@@ -1,4 +1,3 @@
-import './styles/index.scss'
 import { classNames } from "../shared/lib/classNames/classNames";
 import { UseTheme } from "./providers/theme";
 import { AppRouter } from "./providers/router";
