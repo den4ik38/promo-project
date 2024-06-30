@@ -5,14 +5,17 @@ import { ThemeProvider } from "app/providers/theme";
 import 'shared/config/i18n/i18n'
 import 'app/styles/index.scss'
 import { ErrorBoundary } from "app/providers/ErrorBoundary/ErrorBoundary";
+import { StoreProvider } from "app/providers/store";
 
 render(
-    <ErrorBoundary>
-        <BrowserRouter>
-            <ThemeProvider>
-                <App />
-            </ThemeProvider>
-        </BrowserRouter>
-    </ErrorBoundary>,
+    <StoreProvider>
+        <ErrorBoundary>
+            <BrowserRouter>
+                <ThemeProvider>
+                    <App />
+                </ThemeProvider>
+            </BrowserRouter>
+        </ErrorBoundary>
+    </StoreProvider>,
     document.getElementById('root')
 )
