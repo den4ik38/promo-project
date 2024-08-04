@@ -9,5 +9,10 @@
   "Throw Bug": "Throw Bug",
   "TOGGLE": "TOGGLE",
   "lang": "RU",
-  "LogIn": "Log In"
+  "LogIn": "Log In",
+  "Insert your name": "Insert your name",
+  "Insert your password": "Insert your password",
+  "Authorization Form": "Authorization Form",
+  "Incorrect password or username": "Incorrect password or username",
+  "LogOut": "LogOut"
 }

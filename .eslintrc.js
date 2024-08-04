@@ -42,6 +42,7 @@ module.exports = {
         'max-len': ['error', { ignoreComments: true, code: 140 }],
         'react/no-deprecated': 'warn',
         'i18next/no-literal-string': ['error', {markupOnly: true, "ignoreAttribute": ['to', 'data-testid']}],
+        'react/display-name': 'off'
     },
     globals: {
         __IS_DEV__: true,

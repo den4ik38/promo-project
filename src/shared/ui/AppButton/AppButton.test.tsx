@@ -1,7 +1,7 @@
 import {render, screen} from '@testing-library/react';
 import { AppButton, ButtonTheme } from './AppButton';
 
-describe('AppButton', ()=>{
+describe('AppText', ()=>{
     test('test render', ()=>{
         render(<AppButton>TEST</AppButton>)
         expect(screen.getByText('TEST')).toBeInTheDocument()

@@ -83,3 +83,9 @@ SquareXL.args = {
     square: true,
     size: ButtonSize.XL
 }
+export const OutlineDisabled = Template.bind({});
+OutlineDisabled.args = {
+    children: 'TEXT',
+    theme: ButtonTheme.OUTLINE,
+    disabled: true
+}
