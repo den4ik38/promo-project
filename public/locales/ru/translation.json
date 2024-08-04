@@ -9,5 +9,10 @@
   "Throw Bug": "Выкинуть ошибку",
   "TOGGLE": "Переключить",
   "lang": "EN",
-  "LogIn": "Войти"
+  "LogIn": "Войти",
+  "Insert your name": "Введите имя",
+  "Insert your password": "Введите пароль",
+  "Authorization Form": "Форма авторизации",
+  "Incorrect password or username": "Неверные имя пользователя или пароль",
+  "LogOut": "Выйти"
 }

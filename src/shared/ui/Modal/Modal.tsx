@@ -1,6 +1,6 @@
 import {classNames} from 'shared/lib/classNames/classNames';
 import cls from './Modal.module.scss';
-import { MouseEvent, ReactNode, useCallback, useEffect } from 'react';
+import { MouseEvent, ReactNode, useCallback, useEffect, useState } from 'react';
 import { Portal } from '../Portal/Portal';
 import { UseTheme } from 'app/providers/theme';
 
@@ -8,21 +8,28 @@ interface ModalProps {
  className?: string;
  children: ReactNode;
  isOpen?: boolean;
- toClose?: ()=>void;
+ onClose?: ()=>void;
+ lazy?: boolean;
 }
 
 export const Modal = (props: ModalProps) => {
-    const { className, children, isOpen = false, toClose } = props;
+    const { className, children, lazy, isOpen = false, onClose } = props;
     const {theme} = UseTheme();
+    const [isMounted, setIsMounted] = useState(false)
     const mods = {
         [cls.opened]: isOpen,
         [cls[theme]]: true
     }
-    const closeHandler = useCallback(()=>{
-        if (toClose) {
-            toClose()
+    useEffect(()=>{
+        if ( isOpen) {
+            setIsMounted(true)
         }
-    }, [toClose])
+    }, [isOpen, lazy])
+    const closeHandler = useCallback(()=>{
+        if (onClose) {
+            onClose()
+        }
+    }, [onClose])
     const stopPropag = (e: MouseEvent) => {
         e.stopPropagation()
     }
@@ -40,6 +47,10 @@ export const Modal = (props: ModalProps) => {
             window.removeEventListener('keydown', onKeyDown)
         }
     }, [isOpen, onKeyDown])
+
+    if (lazy && !isMounted) {
+        return null
+    }
     return (
         <Portal>
             <div className={classNames(cls.Modal, mods, [className])} >

@@ -13,7 +13,6 @@ describe('Sidebar', ()=>{
         expect(screen.getByTestId('sidebar')).toBeInTheDocument()
         fireEvent.click(toggleBtn)
         expect(screen.getByTestId('sidebar')).toHaveClass('collapsed')
-        screen.debug()
 
     })
 })
