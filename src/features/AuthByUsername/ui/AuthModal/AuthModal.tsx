@@ -1,7 +1,9 @@
 import {classNames} from 'shared/lib/classNames/classNames';
 import cls from './AuthModal.module.scss';
 import { Modal } from 'shared/ui/Modal/Modal';
-import { AuthForm } from '../AuthForm/AuthForm';
+import { AuthFormAsync } from '../AuthForm/AuthForm.async';
+import { Suspense } from 'react';
+import { Loader } from 'shared/ui/Loader/Loader';
 
 interface AuthModalProps {
  className?: string;
@@ -14,7 +16,9 @@ export const AuthModal = (props: AuthModalProps) => {
 
     return (
         <Modal lazy isOpen={isOpen} onClose={onClose} className={classNames(cls.AuthModal, {}, [className])} >
-            <AuthForm />
+            <Suspense fallback={<Loader />}>
+                <AuthFormAsync />
+            </Suspense>
         </Modal>
     );
 }
