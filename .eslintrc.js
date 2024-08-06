@@ -41,7 +41,7 @@ module.exports = {
         'no-underscore-dangle': 'off',
         'max-len': ['error', { ignoreComments: true, code: 140 }],
         'react/no-deprecated': 'warn',
-        'i18next/no-literal-string': ['error', {markupOnly: true, "ignoreAttribute": ['to', 'data-testid']}],
+        'i18next/no-literal-string': ['error', {markupOnly: true, "ignoreAttribute": ['to', 'data-testid', 'name']}],
         'react/display-name': 'off'
     },
     globals: {

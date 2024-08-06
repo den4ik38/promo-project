@@ -42,7 +42,7 @@ export const Navbar = (props: NavbarProps) => {
             <div className={cls.links}>
                 <AppButton onClick={onOpebModal} theme={ButtonTheme.CLEAR}>{t('LogIn')}</AppButton>
             </div>
-            <AuthModal isOpen={isOpen} onClose={onCloseModal} />
+            {isOpen && <AuthModal isOpen={isOpen} onClose={onCloseModal} />}
         </div>
     );
 }

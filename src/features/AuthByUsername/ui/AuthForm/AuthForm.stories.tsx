@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import 'app/styles/index.scss'
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 import { Theme } from 'app/providers/theme';
-import { AuthForm } from './AuthForm';
+import AuthForm from './AuthForm';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator';
 import i18n from "shared/config/i18n/i18n";
 
