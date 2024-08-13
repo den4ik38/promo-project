@@ -9,11 +9,14 @@ export interface buildPaths {
 
 export interface buildEnv {
   mode: buildMode,
-  port: number
+  port: number,
+  api: string
 }
 export interface buildOptions {
   mode: buildMode,
   paths: buildPaths,
   isDev: boolean,
-  port: number
+  port: number,
+  api: string
+  project: 'storybook' | 'frontend' | 'jest'
 }

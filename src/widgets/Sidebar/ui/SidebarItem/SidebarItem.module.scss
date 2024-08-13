@@ -1,0 +1,28 @@
+.item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.jcc {
+  justify-content: center;
+}
+
+.icon {
+  fill: var(--primary-color);
+}
+
+.link {
+  margin-left: 15px;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.collapsed {
+  .link {
+    width: 0;
+    opacity: 0;
+    transition: opacity 0.3s;
+    margin-left: 0;
+  }
+}

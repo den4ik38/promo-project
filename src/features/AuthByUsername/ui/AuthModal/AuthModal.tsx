@@ -17,7 +17,7 @@ export const AuthModal = (props: AuthModalProps) => {
     return (
         <Modal lazy isOpen={isOpen} onClose={onClose} className={classNames(cls.AuthModal, {}, [className])} >
             <Suspense fallback={<Loader />}>
-                <AuthFormAsync />
+                <AuthFormAsync onSucces={onClose}/>
             </Suspense>
         </Modal>
     );

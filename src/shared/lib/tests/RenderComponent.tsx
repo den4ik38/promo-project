@@ -4,7 +4,6 @@ import i18n from "../../config/i18n/i18nForTests";
 import { I18nextProvider } from "react-i18next";
 import React from 'react';
 import { MemoryRouter } from "react-router-dom";
-import { DeepPartial } from "@reduxjs/toolkit";
 import { StateSchema, StoreProvider } from "app/providers/store";
 
 export interface RenderComponentRoutes {
@@ -15,12 +14,12 @@ export interface RenderComponentRoutes {
 export function RenderComponent(component: ReactNode, options: RenderComponentRoutes = {}) {
     const {route = '/', initialState} = options
     return render(
-        <StoreProvider initialState={initialState}>
-            <MemoryRouter initialEntries={[route]}>
+        <MemoryRouter initialEntries={[route]}>
+            <StoreProvider initialState={initialState}>
                 <I18nextProvider i18n={i18n}>
                     {component}
                 </I18nextProvider>
-            </MemoryRouter>
-        </StoreProvider>
+            </StoreProvider>
+        </MemoryRouter>
     )
 }

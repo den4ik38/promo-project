@@ -16,7 +16,7 @@ export const Modal = (props: ModalProps) => {
     const { className, children, lazy, isOpen = false, onClose } = props;
     const {theme} = UseTheme();
     const [isMounted, setIsMounted] = useState(false)
-    const mods = {
+    const mods= {
         [cls.opened]: isOpen,
         [cls[theme]]: true
     }

@@ -1,0 +1,21 @@
+{
+  "Profile Page": "Страница профиля",
+  "Edit": "Редактировать",
+  "Cancel": "Отменить",
+  "Save": "Сохранить",
+  "Profile": "Профиль",
+  "Your Name": "Ваше имя: ",
+  "Your Surname": "Ваша фамилия: ",
+  "We cant load profile": "Не удается получить данные профиля",
+  "Try to reload": "Попробуйте перезагрузить страницу",
+  "Your age": "Возраст",
+  "Your city": "Страна",
+  "Your username": "Имя пользователя",
+  "Your avatar link": "Ссылка на аватар",
+  "Profile data loading exit with error": "Ошибка при получении данных профиля",
+  "Incorrect age": "Возраст может быть только целочисленным числом",
+  "Incorrect name": "Имя и фамилия не могут быть пустыми",
+  "Incorrect request": "Неверный запрос",
+  "No data": "Нет данных",
+  "Server error": "Ошибка сервера"
+}

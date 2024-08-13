@@ -2,6 +2,7 @@
   "translate": "Русский",
   "main": "Main",
   "about": "About",
+  "Profile": "Profile",
   "Loading": "Loading ...",
   "Page nnot found": "Page not found",
   "Reload Page": "Reaload Page",
@@ -10,9 +11,12 @@
   "TOGGLE": "TOGGLE",
   "lang": "RU",
   "LogIn": "Log In",
-  "Insert your name": "Insert your name",
-  "Insert your password": "Insert your password",
+  "Insert your name": "Insert your name: ",
+  "Insert your password": "Insert your password: ",
   "Authorization Form": "Authorization Form",
   "Incorrect password or username": "Incorrect password or username",
-  "LogOut": "LogOut"
+  "LogOut": "LogOut",
+  "Profile data loading exit with error": "Profile data loading exit with error",
+  "Your currency": "Your currency",
+  "Your Country": "Your Country"
 }

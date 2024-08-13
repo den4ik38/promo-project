@@ -1,0 +1,19 @@
+.Wrapper {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.label {
+  color: var(--primary-color);
+  margin-right: 10px;
+}
+
+.AppSelect {
+  background: none;
+}
+
+.option {
+  color: var(--primary-color);
+}

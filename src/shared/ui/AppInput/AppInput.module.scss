@@ -1,3 +1,9 @@
+.box {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
 .AppInput {
   background: none;
   outline: none;
@@ -5,10 +11,20 @@
   border-bottom: 2px solid var(--inverted-bg-color);
   padding: 5px;
   color: var(--primary-color);
+  flex-grow: 1;
 
   &:focus {
     outline: none;
     border-bottom: 2px solid var(--inverted-bg-color);
     box-shadow: 0 2px 2px 0 var(--inverted-bg-color);
   }
+}
+
+.placeholderBox {
+  padding: 5px;
+  text-align: center;
+}
+
+.readonly {
+  opacity: 0.7;
 }
