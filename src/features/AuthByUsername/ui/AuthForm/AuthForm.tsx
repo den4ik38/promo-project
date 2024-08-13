@@ -3,7 +3,7 @@ import cls from './AuthForm.module.scss';
 import { AppInput } from 'shared/ui/AppInput/AppInput';
 import { AppButton, ButtonTheme } from 'shared/ui/AppButton/AppButton';
 import { useTranslation } from 'react-i18next';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { memo, useCallback } from 'react';
 import { LoginActions, LoginReducer } from '../../model/slice/loginSlice';
 import { LoginByUsername } from '../../model/services/LoginByUsername/LoginByUsername';
@@ -13,17 +13,19 @@ import { getLoginError } from '../../model/selectors/getLoginError/getLoginError
 import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';
 import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 
 export interface AuthFormProps {
  className?: string;
+ onSucces?: ()=>void;
 }
 
 const InitialReducers: ReducersList= {loginForm: LoginReducer}
 
 const AuthForm = memo((props: AuthFormProps) => {
-    const { className } = props;
+    const { className, onSucces } = props;
     const {t} = useTranslation();
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const password = useSelector(getLoginPassword);
     const error = useSelector(getLoginError);
     const isLoading = useSelector(getLoginIsLoading);
@@ -36,9 +38,12 @@ const AuthForm = memo((props: AuthFormProps) => {
     const onChangePassword = useCallback((value: string)=>{
         dispatch(LoginActions.setPassword(value))
     }, [dispatch])
-    const onLoginClick = useCallback(()=>{
-        dispatch(LoginByUsername({username, password}))
-    }, [dispatch, password, username])
+    const onLoginClick = useCallback(async ()=>{
+        const result = await dispatch(LoginByUsername({username, password}))
+        if (result.meta.requestStatus === 'fulfilled') {
+            onSucces?.()
+        }
+    }, [onSucces, dispatch, password, username])
     return (
         <DynamicModuleLoader removeAfterUnmount reducers={InitialReducers}>
             <div className={classNames(cls.AuthForm, {}, [className])}>

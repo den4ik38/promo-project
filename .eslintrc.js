@@ -4,6 +4,11 @@ module.exports = {
         es2021: true,
         jest: true,
     },
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
+    },
     extends: ['plugin:react/recommended', 'plugin:i18next/recommended', 'plugin:react-hooks/recommended'],
     parser: '@typescript-eslint/parser',
     parserOptions: {
@@ -30,7 +35,11 @@ module.exports = {
         ],
         'import/no-unresolved': 'off',
         'import/prefer-default-export': 'off',
-        'no-unused-vars': 'warn',
+        "no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars": [
+            "warn",
+            { "argsIgnorePattern": "^_" }
+        ],
         'react/require-default-props': 'off',
         'react/react-in-jsx-scope': 'off',
         'react/jsx-props-no-spreading': 'warn',
@@ -42,10 +51,13 @@ module.exports = {
         'max-len': ['error', { ignoreComments: true, code: 140 }],
         'react/no-deprecated': 'warn',
         'i18next/no-literal-string': ['error', {markupOnly: true, "ignoreAttribute": ['to', 'data-testid', 'name']}],
-        'react/display-name': 'off'
+        'react/display-name': 'off',
+        'no-undef': 'off'
     },
     globals: {
         __IS_DEV__: true,
+        __API_: true,
+        __PROJECT_: true
     },
     overrides: [
         {

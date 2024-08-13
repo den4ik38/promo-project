@@ -2,6 +2,7 @@
   "translate": "English",
   "main": "Главная",
   "about": "О нас",
+  "Profile": "Профиль",
   "Loading": "Загрузка ...",
   "Page nnot found": "Страница не найдена",
   "Reload Page": "Перезагрузить страницу",
@@ -10,9 +11,12 @@
   "TOGGLE": "Переключить",
   "lang": "EN",
   "LogIn": "Войти",
-  "Insert your name": "Введите имя",
-  "Insert your password": "Введите пароль",
+  "Insert your name": "Введите имя: ",
+  "Insert your password": "Введите пароль: ",
   "Authorization Form": "Форма авторизации",
   "Incorrect password or username": "Неверные имя пользователя или пароль",
-  "LogOut": "Выйти"
+  "LogOut": "Выйти",
+  "Profile data loading exit with error": "Не удалось получить данные пользователя",
+  "Your currency": "Ваша Валюта",
+  "Your Country": "Ваша страна"
 }

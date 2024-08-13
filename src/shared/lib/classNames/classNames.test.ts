@@ -2,7 +2,7 @@ import { classNames } from "shared/lib/classNames/classNames"
 
 describe('classnames test', ()=>{
     test('one arg', ()=>{
-        expect(classNames('someclass')).toBe('someclass')
+        expect(classNames('someclass', {}, [])).toBe('someclass')
     })
     test('with additional', ()=>{
         expect(classNames('someclass', {}, ['additionalClass'])).toBe('someclass additionalClass')

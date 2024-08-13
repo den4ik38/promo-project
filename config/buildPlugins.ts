@@ -16,7 +16,9 @@ export function buildPlugins(options: buildOptions): webpack.WebpackPluginInstan
             chunkFilename: "css/[name].[contenthash].css",
         }),
         new webpack.DefinePlugin({
-            __IS_DEV_: JSON.stringify(options.isDev)
+            __IS_DEV_: JSON.stringify(options.isDev),
+            __API_: JSON.stringify(options.api),
+            __PROJECT_: JSON.stringify(options.project)
         }),
         
     ]

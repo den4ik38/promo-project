@@ -1,42 +1,39 @@
-import {classNames} from 'shared/lib/classNames/classNames';
+import {classNames, Mods} from 'shared/lib/classNames/classNames';
 import cls from './AppInput.module.scss';
-import { InputHTMLAttributes, useEffect, useRef, useState } from 'react';
+import { InputHTMLAttributes, memo } from 'react';
 
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>
+type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>
 
 interface AppInputProps extends HTMLInputProps {
  className?: string;
  type?: string;
- value?: string;
+ value?: string | number;
  onChange?: (value: string)=>void;
-//  autoFocus?: boolean;
+ placeholder?: string;
+ readonly?: boolean;
 }
 
-export const AppInput = (props: AppInputProps) => {
-    const { className, type = 'text', value, onChange, ...otherProps } = props;
-    // const ref = useRef<HTMLInputElement>()
+export const AppInput = memo((props: AppInputProps) => {
+    const { className, placeholder, readonly, type = 'text', value, onChange, ...otherProps } = props;
     const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
         onChange?.(e.target.value)
     }
-    // const [isFocused, setIsFocused] = useState(false)
-    // useEffect(() => {
-    //     if (autoFocus) {
-    //         setIsFocused(true);
-    //         ref.current?.focus();
-    //     }
-      
-    //     return () => setIsFocused(false);
-    // }, [autoFocus, isFocused]);
-
+    const mods: Mods = {
+        [cls.readonly]: readonly
+    }
     return (
-        <input 
-            type={type} 
-            value={value} 
-            // ref={ref}
-            // autoFocus={isFocused}
-            onChange={onChangeHandler} 
-            className={classNames(cls.AppInput, {}, [className])}
-            {...otherProps}
-        />
+        <div className={cls.box}>
+            {placeholder && <div className={cls.placeholderBox}>
+                {placeholder}
+            </div>}
+            <input 
+                readOnly={readonly}
+                type={type} 
+                value={value} 
+                onChange={onChangeHandler} 
+                className={classNames(cls.AppInput, mods, [className])}
+                {...otherProps}
+            />
+        </div>
     );
-}
+})

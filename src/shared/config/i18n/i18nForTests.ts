@@ -24,7 +24,7 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
-const ns = ['translation', 'main', 'about'];
+const ns = ['translation', 'main', 'about', 'profile'];
 const supportedLngs = ['ru', 'en'];
 const resources = ns.reduce((acc, n) => {
     supportedLngs.forEach((lng) => {

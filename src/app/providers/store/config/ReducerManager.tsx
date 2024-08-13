@@ -11,11 +11,11 @@ export function createReducerManager(initialReducers: ReducersMapObject<StateSch
     return {
         getReducerMap: () => reducers,
 
-        reduce: (state: StateSchema, action: AnyAction) => {
-            if (keysToRemove.length > 0) {
+        reduce: (state: StateSchema | undefined, action: AnyAction) => {
+            if (keysToRemove.length > 0 && state) {
                 state = { ...state }
                 for (let key of keysToRemove) {
-                    delete state[key]
+                    delete state?.[key]
                 }
                 keysToRemove = []
             }

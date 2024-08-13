@@ -1,0 +1,21 @@
+.ProfileCard {
+  padding: 20px;
+  border: 2px solid var(--inverted-bg-color);
+}
+
+.error .isLoading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatarBox {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit {
+  border: 2px solid var(--inverted-primary-color);
+}

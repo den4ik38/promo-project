@@ -1,0 +1,22 @@
+{
+  "Profile Page": "Profile Page",
+  "Edit": "Edit",
+  "Cancel": "Cancel",
+  "Save": "Save",
+  "Profile": "Profile",
+  "Your Name": "Your Name: ",
+  "Your Surname": "Your Surname: ",
+  "We cant load profile": "We cant load profile",
+  "Try to reload": "Try to reload",
+  "Your age": "Your age",
+  "Your city": "Your city",
+  "Your username": "Your username",
+  "Your avatar link": "Your avatar link",
+  "Profile data loading exit with error": "Profile data loading exit with error",
+  "Incorrect age": "Incorrect age. Age must be a number",
+  "Incorrect name": "Name aand Surname cant be empty",
+  "Incorrect request": "Incorrect request",
+  "No data": "No data",
+  "Server error": "Server error"
+
+}
