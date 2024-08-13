@@ -26,7 +26,8 @@ export class ErrorBoundary extends React.Component<ErrorProps, ErrorState> {
     }
 
     render() {
-        const {children} = this.props
+        // eslint-disable-next-line react/prop-types
+        const { children } = this.props
         const { hasError } = this.state
         if (hasError) {
             // You can render any custom fallback UI
